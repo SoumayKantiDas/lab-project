@@ -1,0 +1,22 @@
+{% block content %}
+  <h2>GitHub repogitory</h2>
+  <form method="get">
+    <input type="text" name="username">
+    <button type="submit">search on github</button>
+  </form>
+
+  {% if search_result %}
+    
+  <p><em>{{ search_result.message }}</em></p>
+  
+    
+  <ul>
+     
+    {% for repo in search_result %}
+       <a href="{{repo.html_url}}" target="_blank"><li>{{ repo.name }}</li></a>
+    {% endfor %}
+  </ul>
+
+  
+  {% endif %}
+  {% endblock %}
