@@ -7,10 +7,10 @@
   </head>
   <body>
     <h3>File Names:</h3>
-    {% if codes %}
+    {% if code_files %}
     <ul>
-    {% for ele in codes.files %}
-        <li><a href="/{{ username }}/{{ repo_name }}/{{refference}}/{{ ele.filename | replace_slash }}/">{{ ele.filename }}</a></li>
+    {% for ele in code_files.files %}
+        <li><a href="/{{ username }}/{{ repo_name }}/{{head}}/{{base}}/{{ ele.filename | replace_slash }}/">{{ ele.filename }}</a></li>
     {% endfor %}
     </ul>
     {% endif %}
