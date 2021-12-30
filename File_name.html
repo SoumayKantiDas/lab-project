@@ -1,0 +1,18 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>File Name</title>
+  </head>
+  <body>
+    <h3>File Names:</h3>
+    {% if codes %}
+    <ul>
+    {% for ele in codes.files %}
+        <li><a href="/{{ username }}/{{ repo_name }}/{{refference}}/{{ ele.filename | replace_slash }}/">{{ ele.filename }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>

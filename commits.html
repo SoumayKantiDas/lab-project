@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Commits</title>
+  </head>
+  <body>
+    <h3>Commits:</h3>
+    {% if commits %}
+    <ul>
+    {% for ele in commits %}
+        <li><a href="/{{ username }}/{{ repo_name }}/{{ele.sha}}/">{{ ele.commit.message }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
